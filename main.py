@@ -55,25 +55,31 @@ def ping(bot, update, args):
 
 
 def add(bot, update, args):
-  if len(args) == 2:
-    type = args[0]
-    amount = float(args[1])
+    user = update.message.from_user
+    if isUserAuthorized(user):
+      if len(args) == 2:
+        type = args[0]
+        amount = float(args[1])
 
-    shared.update_hours(type, amount)
-    bot.send_message(chat_id=update.message.chat_id, text="Activity time has been added successfully")
+        shared.update_hours(type, amount)
+        bot.send_message(chat_id=update.message.chat_id, text="Activity time has been added successfully")
 
 
 def subtract(bot, update, args):
-  if len(args) == 2:
-    type = args[0]
-    amount = float(args[1])
+    user = update.message.from_user
+    if isUserAuthorized(user):
+      if len(args) == 2:
+        type = args[0]
+        amount = float(args[1])
 
-    shared.update_hours(type, amount)
-    bot.send_message(chat_id=update.message.chat_id, text="Leisure time has been subtracted successfully")
+        shared.update_hours(type, amount)
+        bot.send_message(chat_id=update.message.chat_id, text="Leisure time has been subtracted successfully")
 
 
 def get_fun_time(bot, update):
-  bot.send_message(chat_id=update.message.chat_id, text="/result " + str(shared.get_fun_hours()))
+    user = update.message.from_user
+    if isUserAuthorized(user):
+        bot.send_message(chat_id=update.message.chat_id, text="/result " + str(shared.get_fun_hours()))
 
 
 updater = Updater(my_token, request_kwargs=REQUEST_KWARGS)
