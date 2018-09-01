@@ -1,6 +1,9 @@
 # reward-system-bot
 A telegram bot to manage my rewarding system for time management
 
+TODO 
+- use web hook to take audio response from the server for fun time query
+
 Activity type   facotr          command                 voice command
 
 fun             -1              /subtract fun x         I had fun for x hours 
