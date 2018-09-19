@@ -75,6 +75,15 @@ def subtract(bot, update, args):
         shared.update_hours(type, amount)
         bot.send_message(chat_id=update.message.chat_id, text="Leisure time has been subtracted successfully")
 
+def activity(bot, update, args):
+    user = update.message.from_user
+    if isUserAuthorized(user):
+        if len(args) == 1:
+            type = args[0]
+
+            shared.update_hours_activity(type)
+            bot.send_message(chat_id=update.message.chat_id, text="Activity time has been subtracted stored")
+
 
 def get_fun_time(bot, update):
     user = update.message.from_user
@@ -88,12 +97,14 @@ dispatcher = updater.dispatcher
 ping_handler = CommandHandler('ping', ping, pass_args=True)
 add_handler = CommandHandler('add', add, pass_args=True)
 sub_handler = CommandHandler('subtract', subtract, pass_args=True)
+activity_handler = CommandHandler('activity', activity, pass_args=True)
 get_fun_handler = CommandHandler('getFun', get_fun_time)
 
 dispatcher.add_handler(ping_handler)
 dispatcher.add_handler(add_handler)
 dispatcher.add_handler(sub_handler)
 dispatcher.add_handler(get_fun_handler)
+dispatcher.add_handler(activity_handler)
 
 updater.start_polling()
 

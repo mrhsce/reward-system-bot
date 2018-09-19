@@ -10,7 +10,7 @@ import shared
 
 # Standard socket stuff:
 host = '' # do we need socket.gethostname() ?
-port = 34494
+port = 34490
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.bind((host, port))
 sock.listen(1) # don't queue up any requests
@@ -24,10 +24,14 @@ def start_server():
         req = csock.recv(1024) # get the request, 1kB max
         print req
 
+        match_activity = re.match('GET /activity\?type=([a-zA-Z]+)', req)
         match_add = re.match('GET /add\?type=([a-zA-Z]+)\?v=(\d+\.\d{1,2}|\d+)\s', req)
         match_subtract = re.match('GET /subtract\?type=([a-zA-Z]+)\?v=(\d+\.\d{1,2}|\d+)\s', req)
         match_getfun = re.match('GET /getfun', req)
 
+        if match_activity:
+            shared.update_hours_activity(match_add.group(1))
+            print(match_add.group(1))
         if match_add:
            shared.update_hours(match_add.group(1), float(match_add.group(2)))
            print(match_add.group(1) + " " + match_add.group(2))
