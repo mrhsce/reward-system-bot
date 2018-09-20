@@ -1,10 +1,12 @@
 # reward-system-bot
 A telegram bot to manage my rewarding system for time management
 
-TODO 
+TODO
+------
 - use web hook to take audio response from the server for fun time query
 
-
+Installation
+---------------------
 In order to execute this code pip should be installed, then executes these commands:
 
 ```shell
@@ -14,6 +16,16 @@ pip install python-telegram-bot[socks]
 
 pip install requests
 ```
+Running
+-------------
+On the server it should be executed in background:
+      
+```
+nohup python python/reward_system/main.py > /dev/null 2>&1&
+```
+
+How to use
+------------
 
 | Activity type |  facotr |        command      |          voice command|
 | --------------| --------| --------------------| -----------------------|
@@ -25,8 +37,4 @@ pip install requests
 |Leitner        | const 0.25 |   /activity leitner  |  Daily leitner finished |
 
 
-On the server it should be executed in background:
-      
-```
-nohup python python/reward_system/main.py > /dev/null 2>&1&
-```
+
