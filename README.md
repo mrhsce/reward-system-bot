@@ -7,7 +7,7 @@ TODO
 
 In order to execute this code pip should be installed, then executes these commands:
 
-```
+```shell
 pip install python-telegram-bot
 
 pip install python-telegram-bot[socks]
