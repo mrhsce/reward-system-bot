@@ -7,6 +7,7 @@ import shared
 # In order to execute this code pip should be installed, then executes these commands:
 # - pip install python-telegram-bot
 # - pip install python-telegram-bot[socks]
+# - pip install requests
 
 
 logging.basicConfig(filename='RS_bot.log', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -17,15 +18,13 @@ logger = logging.getLogger(__name__)
 my_token = "673291427:AAHokJVmKsbZDvrgzhJtD-oOCacVRSN1VHE"
 
 REQUEST_KWARGS = {
-  'proxy_url': 'socks5://go.socadd.com:443',
-  # Optional, if you need authentication:
-  'urllib3_proxy_kwargs': {
-    'username': 'ir124484',
-    'password': '08740874',
-  }
+    'proxy_url': 'socks5://go.socadd.com:443',
+    # Optional, if you need authentication:
+    'urllib3_proxy_kwargs': {
+        'username': 'ir124484',
+        'password': '08740874',
+    }
 }
-
-
 
 # **************************** Authorization **********************************
 
@@ -39,41 +38,39 @@ def isUserAuthorized(user):
         return False
 
 
-
-
-
 # pp = telegram.utils.request.Request(proxy_url='socks5://go.socadd.com:443', urllib3_proxy_kwargs={'username': 'ir124484','password': '08740874'})
 # bot = telegram.Bot(token=my_token, request=pp)
 
 
 def ping(bot, update, args):
-  user = update.message.from_user
-  if isUserAuthorized(user):
-    bot.send_message(chat_id=update.message.chat_id, text="At your service " + user.first_name)
-  else:
-    bot.send_message(chat_id=update.message.chat_id, text="Sorry, you are not authorized")
+    user = update.message.from_user
+    if isUserAuthorized(user):
+        bot.send_message(chat_id=update.message.chat_id, text="At your service " + user.first_name)
+    else:
+        bot.send_message(chat_id=update.message.chat_id, text="Sorry, you are not authorized")
 
 
 def add(bot, update, args):
     user = update.message.from_user
     if isUserAuthorized(user):
-      if len(args) == 2:
-        type = args[0]
-        amount = float(args[1])
+        if len(args) == 2:
+            type = args[0]
+            amount = float(args[1])
 
-        shared.update_hours(type, amount)
-        bot.send_message(chat_id=update.message.chat_id, text="Activity time has been added successfully")
+            shared.update_hours(type, amount)
+            bot.send_message(chat_id=update.message.chat_id, text="Activity time has been added successfully")
 
 
 def subtract(bot, update, args):
     user = update.message.from_user
     if isUserAuthorized(user):
-      if len(args) == 2:
-        type = args[0]
-        amount = float(args[1])
+        if len(args) == 2:
+            type = args[0]
+            amount = float(args[1])
 
-        shared.update_hours(type, amount)
-        bot.send_message(chat_id=update.message.chat_id, text="Leisure time has been subtracted successfully")
+            shared.update_hours(type, amount)
+            bot.send_message(chat_id=update.message.chat_id, text="Leisure time has been subtracted successfully")
+
 
 def activity(bot, update, args):
     user = update.message.from_user
@@ -82,7 +79,7 @@ def activity(bot, update, args):
             type = args[0]
 
             shared.update_hours_activity(type)
-            bot.send_message(chat_id=update.message.chat_id, text="Activity time has been subtracted stored")
+            bot.send_message(chat_id=update.message.chat_id, text="Activity time has been stored")
 
 
 def get_fun_time(bot, update):

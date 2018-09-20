@@ -40,7 +40,7 @@ def update_hours_activity(type):
     global work_total_hour, study_total_hour, fun_total_hour
     if type == EXERCISE_TYPE:
         fun_total_hour += EXERCISE
-    if type == LEITNER:
+    if type == LEITNER_TYPE:
         fun_total_hour += LEITNER
 
     store_into_file(work_total_hour, study_total_hour, fun_total_hour)
