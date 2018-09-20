@@ -7,11 +7,13 @@ TODO
 
 In order to execute this code pip should be installed, then executes these commands:
 
+```
 pip install python-telegram-bot
 
 pip install python-telegram-bot[socks]
 
 pip install requests
+```
 
 Activity type   facotr          command                 voice command
 
@@ -21,5 +23,6 @@ Study           1/3             /add study x            I studied for x hours
 
 
 On the server it should be executed in background:
-      
+      ```
       nohup python python/reward_system/main.py > /dev/null 2>&1&
+      ```
