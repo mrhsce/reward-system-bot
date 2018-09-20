@@ -21,7 +21,8 @@ Running
 On the server it should be executed in background:
       
 ```
-nohup python python/reward_system/main.py > /dev/null 2>&1&
+cd python/reward_system
+nohup python main.py > /dev/null 2>&1&
 ```
 
 How to use
