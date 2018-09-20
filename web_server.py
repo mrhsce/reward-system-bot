@@ -11,7 +11,7 @@ import requests
 
 # Standard socket stuff:
 host = ''  # do we need socket.gethostname() ?
-port = 34492
+port = 34490
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.bind((host, port))
 sock.listen(1)  # don't queue up any requests
