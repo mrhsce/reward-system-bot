@@ -19,9 +19,12 @@ pip install requests
 | --------------| --------| --------------------| -----------------------|
 |fun            |-1       |      /subtract fun x|         I had fun for x hours| 
 
-Work            1/4             /add work x             I worked for x hours
+|Work           | 1/4     |        /add work x  |          I worked for x hours|
 
-Study           1/3             /add study x            I studied for x hours
+|Study          | 1/3     |        /add study x |           I studied for x hours|
+|Reading        | - 1/3   |       /add read x   |       I read for x hours |
+|Exercise       | const 0.5 |     /activity exercise |  I exercised |
+|Leitner        | const 0.25 |   /activity leitner  |  Daily leitner finished |
 
 
 On the server it should be executed in background:
