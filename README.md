@@ -3,7 +3,7 @@ A telegram bot to manage my rewarding system for time management
 
 TODO
 ------
-- use web hook to take audio response from the server for fun time query
+- 
 
 Installation
 ---------------------
