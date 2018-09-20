@@ -15,9 +15,9 @@ pip install python-telegram-bot[socks]
 pip install requests
 ```
 
-Activity type   facotr          command                 voice command
-
-fun             -1              /subtract fun x         I had fun for x hours 
+| Activity type |  facotr |        command      |          voice command|
+| --------------| --------| --------------------| -----------------------|
+|fun            |-1       |      /subtract fun x|         I had fun for x hours| 
 
 Work            1/4             /add work x             I worked for x hours
 
