@@ -6,9 +6,10 @@ TODO
 
 
 In order to execute this code pip should be installed, then executes these commands:
-- pip install python-telegram-bot
-- pip install python-telegram-bot[socks]
-- pip install requests
+
+pip install python-telegram-bot
+pip install python-telegram-bot[socks]
+pip install requests
 
 Activity type   facotr          command                 voice command
 
