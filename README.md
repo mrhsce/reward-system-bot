@@ -18,4 +18,5 @@ Study           1/3             /add study x            I studied for x hours
 
 
 On the server it should be executed in background:
+      
       nohup python python/reward_system/main.py > /dev/null 2>&1&
