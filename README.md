@@ -5,6 +5,7 @@ TODO
 ------
 - add start pause and stop timer commands to calculate time exp start timer for work
 - use toggl Api to store time and take queries
+
 Installation
 ---------------------
 In order to execute this code pip should be installed, then executes these commands:
